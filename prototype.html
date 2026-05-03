@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-width=1.0">
+    <title>CU-TEP Preparation - Interactive E-Book</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cu-pink: #FF99B9;
+            --cu-pink-dark: #E07A9A;
+            --bg-color: #f8fafc;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --card-bg: #ffffff;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Prompt', 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: var(--cu-pink-dark);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .page-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .page-number {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .section-title {
+            border-left: 5px solid var(--cu-pink);
+            padding-left: 15px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .bilingual-text {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .text-th {
+            font-size: 1.1rem;
+        }
+
+        .text-en {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-family: 'Inter', sans-serif;
+            font-style: italic;
+        }
+
+        .audio-player-container {
+            background: linear-gradient(135deg, #fff0f5 0%, #ffe4ec 100%);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 30px 0;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border: 1px solid #ffd6e4;
+        }
+
+        .audio-icon {
+            font-size: 2rem;
+        }
+
+        audio {
+            width: 100%;
+            height: 40px;
+        }
+
+        .qr-placeholder {
+            display: none;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+        }
+
+        .btn {
+            background: var(--text-main);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-family: 'Prompt', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn:hover {
+            background: var(--cu-pink-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        /* PRINT STYLES */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .controls, .header {
+                display: none;
+            }
+            .page-card {
+                box-shadow: none;
+                border-radius: 0;
+                padding: 0;
+                margin-bottom: 0;
+                page-break-after: always; /* Force new page for each card */
+            }
+            .audio-player-container audio, .audio-icon {
+                display: none; /* Hide HTML5 player when printing */
+            }
+            .audio-player-container {
+                background: transparent;
+                border: 2px dashed #ccc;
+                flex-direction: column;
+                text-align: center;
+                padding: 30px;
+                margin-top: 10px;
+            }
+            .qr-placeholder {
+                display: block;
+                font-size: 0.9rem;
+                color: #555;
+                text-align: center;
+                width: 100%;
+            }
+            .qr-box {
+                width: 120px;
+                height: 120px;
+                background: #eee;
+                margin: 10px auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid #ccc;
+                color: #999;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="controls">
+        <button class="btn" onclick="window.print()">📥 บันทึกเป็นเอกสาร PDF (Save as PDF)</button>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>CU-TEP Mastery</h1>
+            <p>คู่มือเตรียมสอบเจาะลึก 50 หน้า พร้อมระบบเสียงจำลองสอบจริง</p>
+        </div>
+
+        <!-- PAGE 1 -->
+        <div class="page-card">
+            <div class="page-number">Page 1</div>
+            
+            <h2 class="section-title">Part 1: Listening Comprehension - Short Dialogues</h2>
+            
+            <div class="bilingual-text">
+                <div class="text-th"><strong>คำแนะนำ:</strong> ในส่วนนี้จะเป็นการทดสอบทักษะการฟัง คุณจะได้ยินบทสนทนาสั้นๆ ระหว่างคนสองคน หลังจากนั้นจะมีคำถามเกี่ยวกับบทสนทนานั้น ให้คุณเลือกคำตอบที่ถูกต้องที่สุดจากตัวเลือกทั้ง 4 ข้อ</div>
+                <div class="text-en"><strong>Directions:</strong> In this part, you will hear short conversations between two people. After each conversation, you will hear a question about it. Choose the best answer from the four choices.</div>
+            </div>
+
+            <div class="audio-player-container">
+                <div class="audio-icon">🎧</div>
+                <div style="flex-grow: 1;">
+                    <div style="margin-bottom: 5px; font-weight: 500; font-size: 0.9rem;">Track 01: Practice Test 1</div>
+                    <audio controls>
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                        เบราว์เซอร์ของคุณไม่รองรับการเล่นไฟล์เสียง
+                    </audio>
+                </div>
+                <!-- This will only show up when printed to PDF -->
+                <div class="qr-placeholder">
+                    <div class="qr-box">[พื้นที่ใส่รูป QR Code]</div>
+                    <p><strong>สแกน QR Code เพื่อฟังเสียง Track 01</strong></p>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px;">
+                <p><strong>1. What does the man mean?</strong> (ผู้ชายคนนี้หมายความว่าอย่างไร?)</p>
+                <ul style="list-style-type: none; padding-left: 20px; margin-top: 15px; display: flex; flex-direction: column; gap: 10px;">
+                    <li>A) He agrees with the woman's suggestion.</li>
+                    <li>B) He thinks the deadline should be extended.</li>
+                    <li>C) He hasn't started the report yet.</li>
+                    <li>D) He needs more time to review the data.</li>
+                </ul>
+            </div>
+
+            <div style="margin-top: 40px; padding: 20px; background: #f1f5f9; border-left: 4px solid #64748b; border-radius: 4px;">
+                <h4 style="margin-bottom: 10px; color: #334155;">💡 คำอธิบายอย่างละเอียด (Detailed Explanation)</h4>
+                <p style="font-size: 0.95rem;">จากบทสนทนา ผู้หญิงเสนอให้ส่งรายงานก่อนกำหนด แต่ผู้ชายตอบว่า <em>"I'm afraid I'm still gathering the numbers."</em> (ผมเกรงว่าผมยังต้องรวบรวมตัวเลขอยู่) ซึ่งหมายความว่าเขายังทำไม่เสร็จ จึงสอดคล้องกับข้อ C มากที่สุด</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
