@@ -8,11 +8,38 @@
 
 ---
 
+## 🚀 วิธี Deploy & อัปเดตเว็บ
+
+### เว็บนี้ Deploy บน GitHub Pages (ฟรีถาวร)
+- **ค่าใช้จ่าย:** ฟรี 100% ไม่มีวันหมดอายุ ไม่ต้องต่ออายุ
+- **Bandwidth:** 100 GB/เดือน (เหลือเฟือสำหรับเว็บขนาดนี้)
+- **พื้นที่:** 1 GB (ตอนนี้ใช้แค่ ~1 MB)
+
+### วิธีอัปเดตเนื้อหา (ทำทุกครั้งหลังแก้ไขไฟล์)
+เปิด Terminal ใน VS Code (`Ctrl + Backtick`) แล้วรันคำสั่ง:
+```bash
+git add -A
+git commit -m "ใส่ข้อความอธิบายสิ่งที่แก้ไข"
+git push
+```
+เว็บจะอัปเดตอัตโนมัติภายใน 1-2 นาทีหลัง push
+
+### วิธีเพิ่มบทเรียนใหม่
+1. สร้างไฟล์ `js/lessons/lessonXX.js` (ตามรูปแบบไฟล์เดิม)
+2. เพิ่ม `<script src="js/lessons/lessonXX.js"></script>` ใน `index.html` (ก่อน `lesson97.js`)
+3. รัน `git add -A && git commit -m "Add lesson XX" && git push`
+
+### ถ้าเว็บไม่อัปเดตบนมือถือ
+- กดค้าง Refresh หรือเคลียร์ Cache ในเบราว์เซอร์
+- หรือเปิดลิงค์ด้วย `?v=2` ต่อท้าย: `https://gmakerjay.github.io/c-tep-jay/?v=2`
+
+---
+
 ## ✅ สิ่งที่ทำเสร็จแล้ว (Completed Features)
 
 ### 1. ระบบโครงสร้างหลัก (Core System)
 - **SPA Architecture:** โครงสร้างเว็บหน้าเดียว (`index.html` + `app.js`) ทำให้ไม่ต้องโหลดหน้าใหม่เวลาเปลี่ยนบทเรียน
-- **Dynamic Lesson Loader:** แยกระบบบทเรียนเป็นไฟล์ย่อย (`lesson01.js` ถึง `lesson40.js` + `lesson97-99.js`) รวม 43 โมดูล
+- **Dynamic Lesson Loader:** แยกระบบบทเรียนเป็นไฟล์ย่อย (`lesson01.js` ถึง `lesson45.js` + `lesson97-99.js`) รวม 48 โมดูล
 - **Progress Tracker:** ระบบบันทึกความคืบหน้า (ผ่าน `localStorage`)
 - **GitHub Pages Deployment:** Deploy อัตโนมัติทุกครั้งที่ push ไปยัง `main` branch
 
@@ -20,6 +47,7 @@
 - **Responsive Design:** รองรับมือถือ แท็บเล็ต และคอมพิวเตอร์
 - **Dark/Light Mode:** สลับธีมมืด/สว่าง พร้อม CSS overrides สำหรับ Game UI
 - **Premium Aesthetics:** Google Fonts (Inter + Prompt), Gradient text, Glassmorphism
+- **Welcome Screen:** หน้าแรกพร้อมวิธีใช้งาน 4 ขั้นตอน + สรุปเนื้อหาทั้งหมดแบ่งหมวด
 
 ### 3. ระบบโต้ตอบ (Interactive Features)
 - **TTS Engine (Text-to-Speech):** ปรับความเร็ว 0.5x-1.5x, ปุ่ม 🔊 ทุกจุดภาษาอังกฤษ
@@ -29,9 +57,9 @@
 - **Vocab Matching Game:** เกมส์จับคู่คำจากเสียง พร้อมปุ่ม Replay/Restart/Next
 - **Passage Vocabulary:** ศัพท์น่ารู้จากบทอ่านพร้อมปุ่มฟังทีละคำ
 
-### 4. เนื้อหาบทเรียน (Content) — 40 บท + 3 โมดูลพิเศษ
+### 4. เนื้อหาบทเรียน (Content) — 45 บท + 3 โมดูลพิเศษ
 
-#### 🎧 Listening (15 บท)
+#### 🎧 Listening (20 บท)
 | บท | หัวข้อ |
 |----|--------|
 | 1-5 | Short Dialogues: พื้นฐาน, Inference, Agreement, Suggestions, Idioms |
@@ -53,7 +81,7 @@
 | 36 | Long Passage: Plastic Pollution (Environment) |
 | 38 | Vocabulary in Context: เดาศัพท์จากบริบท (15 ข้อ) |
 
-#### ✏️ Grammar & Error Identification (12 บท)
+#### ✏️ Grammar & Error Identification (10 บท)
 | บท | หัวข้อ |
 |----|--------|
 | 26 | Error ID: Subject-Verb Agreement |
@@ -67,10 +95,17 @@
 | 37 | Sentence Completion (15 ข้อ) |
 | 39 | Mixed Grammar Review (15 ข้อ) |
 
-#### 🏆 Mock Test & Special
+#### 🎯 เก็งข้อสอบ & Mock Test (6 บท)
 | บท | หัวข้อ |
 |----|--------|
-| 40 | 🏆 Full CU-TEP Mock Test (20 ข้อ ครบ 4 พาร์ท) |
+| 40 🏆 | Full CU-TEP Mock Test (20 ข้อ ครบ 4 พาร์ท) |
+| 41 🎯 | เก็งข้อสอบ Listening ชุด 1: สำนวนยอดนิยม (15 ข้อ) |
+| 42 🎯 | เก็งข้อสอบ Listening ชุด 2: สำนวน + Short Talks (15 ข้อ) |
+| 43 🎯 | เก็งข้อสอบ Listening ชุด 3: Phrasal Verbs + Monologues (15 ข้อ) |
+| 44 🎯 | เก็งข้อสอบ Listening ชุด 4: สถานการณ์จริง + Long Talks (15 ข้อ) |
+| 45 🏅 | เก็งข้อสอบ Listening ชุด 5 (Final): รวมมิตรขั้นสูง + Academic Talks (15 ข้อ) |
+
+> **รวมข้อเก็งข้อสอบ Listening: 75 ข้อ** — ทุกข้อมี 🔊 ฟังเสียง + 💬 คำแปลไทย + เฉลยละเอียด
 
 #### 🎮 โมดูลพิเศษ (Games & Flashcards)
 | โมดูล | หัวข้อ |
@@ -84,13 +119,13 @@
 ## 📁 โครงสร้างไฟล์ (File Structure)
 ```
 c-tep_jay/
-├── index.html              # หน้าหลัก SPA
+├── index.html              # หน้าหลัก SPA + วิธีใช้งาน + สรุปเนื้อหา
 ├── css/style.css            # ธีม, Dark mode, Component styles
 ├── js/
 │   ├── app.js               # Logic หลัก: Render, Quiz, Flashcard, Game, TTS
 │   ├── data.js              # ข้อมูลกลาง
 │   └── lessons/
-│       ├── lesson01.js ~ lesson40.js   # บทเรียน 1-40
+│       ├── lesson01.js ~ lesson45.js   # บทเรียน 1-45
 │       ├── lesson97.js                  # Flashcard 500 คำ
 │       ├── lesson98.js                  # เกมส์จับคู่คำ ชุด 2
 │       └── lesson99.js                  # เกมส์จับคู่คำ ชุด 1
@@ -102,8 +137,8 @@ c-tep_jay/
 
 ## 🚀 แผนงานต่อไป (Potential Next Steps)
 
-- **บทที่ 41-50:** ขยายเนื้อหาเพิ่มเติม เช่น Advanced Reading, Phrasal Verbs, Collocations
-- **Mock Test ชุดที่ 2-3:** เพิ่มข้อสอบจำลองอีกหลายชุดเพื่อฝึกซ้ำ
+- **เก็งข้อสอบ Reading:** เพิ่มชุดเก็งข้อสอบ Reading 3-5 ชุด
+- **เก็งข้อสอบ Error ID:** เพิ่มชุดเก็งข้อสอบ Writing/Grammar 3-5 ชุด
 - **Flashcard ชุดที่ 2:** เพิ่มศัพท์อีก 500 คำในหมวดใหม่ (Technology, Law, Art)
 - **Score Dashboard:** หน้าสรุปผลคะแนนรวมจากทุกบท
 - **Performance Optimization:** Lazy-loading สำหรับบทเรียน เมื่อจำนวนบทเกิน 50
