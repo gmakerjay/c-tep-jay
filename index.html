@@ -51,13 +51,51 @@
             <div class="welcome-hero">
                 <div class="welcome-icon">🎓</div>
                 <h1>ยินดีต้อนรับสู่ <span class="gradient-text">CU-TEP Mastery</span></h1>
-                <p class="welcome-desc">สื่อการเรียนรู้เตรียมสอบ CU-TEP แบบอินเตอร์แอคทีฟ 40+ บทเรียน<br>พร้อม Flashcard 500 คำ ระบบฝึกฟัง เกมส์จับคู่คำ Mock Test และเฉลยละเอียด</p>
+                <p class="welcome-desc">สื่อการเรียนรู้เตรียมสอบ CU-TEP แบบอินเตอร์แอคทีฟ 45+ บทเรียน<br>พร้อม Flashcard 500 คำ ระบบฝึกฟัง เก็งข้อสอบ เกมส์จับคู่คำ Mock Test และเฉลยละเอียด</p>
                 <button class="btn-primary" onclick="loadLesson(1)">เริ่มเรียนบทที่ 1 →</button>
             </div>
+
+            <!-- วิธีใช้งาน -->
+            <div style="background: var(--card-bg); border-radius: var(--radius); padding: 28px; margin: 24px 0; border: 1px solid var(--border);">
+                <h2 style="margin: 0 0 16px 0; font-size: 1.3rem;">📖 วิธีใช้งาน</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+                    <div style="display: flex; gap: 12px; align-items: flex-start;">
+                        <div style="background: var(--primary); color: #fff; border-radius: 50%; min-width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700;">1</div>
+                        <div>
+                            <strong>กดเมนู ☰ (สามขีด)</strong>
+                            <p style="margin: 4px 0 0; font-size: 0.85rem; color: var(--text-light);">ที่มุมบนซ้าย เพื่อเปิดแถบเมนูด้านข้าง</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 12px; align-items: flex-start;">
+                        <div style="background: var(--primary); color: #fff; border-radius: 50%; min-width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700;">2</div>
+                        <div>
+                            <strong>เลือกบทเรียน</strong>
+                            <p style="margin: 4px 0 0; font-size: 0.85rem; color: var(--text-light);">เลื่อนดูรายการบทเรียนในเมนู แล้วกดเลือกบทที่ต้องการ</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 12px; align-items: flex-start;">
+                        <div style="background: var(--primary); color: #fff; border-radius: 50%; min-width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700;">3</div>
+                        <div>
+                            <strong>กด 🔊 เพื่อฟังเสียง</strong>
+                            <p style="margin: 4px 0 0; font-size: 0.85rem; color: var(--text-light);">ทุกข้อความภาษาอังกฤษมีปุ่มฟังเสียง กดฟังได้ตลอด</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 12px; align-items: flex-start;">
+                        <div style="background: var(--primary); color: #fff; border-radius: 50%; min-width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700;">4</div>
+                        <div>
+                            <strong>ทำ Quiz + ดูเฉลย</strong>
+                            <p style="margin: 4px 0 0; font-size: 0.85rem; color: var(--text-light);">เลือกคำตอบ กดแล้วจะเฉลยทันที พร้อมอธิบายละเอียด</p>
+                        </div>
+                    </div>
+                </div>
+                <p style="margin: 16px 0 0; font-size: 0.85rem; color: var(--text-light);">💡 <strong>Tip:</strong> กด 🌙 ที่มุมบนขวาเพื่อสลับโหมดมืด/สว่าง &nbsp;|&nbsp; ความก้าวหน้าจะถูกบันทึกอัตโนมัติ</p>
+            </div>
+
+            <!-- สถิติ -->
             <div class="welcome-stats">
                 <div class="stat-card">
                     <div class="stat-icon">🎧</div>
-                    <div class="stat-number">15</div>
+                    <div class="stat-number">20</div>
                     <div class="stat-label">บท Listening</div>
                 </div>
                 <div class="stat-card">
@@ -67,13 +105,66 @@
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon">✏️</div>
-                    <div class="stat-number">8</div>
+                    <div class="stat-number">10</div>
                     <div class="stat-label">บท Grammar</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">ชุดเก็งข้อสอบ</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon">📇</div>
                     <div class="stat-number">500</div>
                     <div class="stat-label">Flashcards</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🎮</div>
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">เกมส์จับคู่คำ</div>
+                </div>
+            </div>
+
+            <!-- เนื้อหาแบ่งตามหมวด -->
+            <div style="background: var(--card-bg); border-radius: var(--radius); padding: 28px; margin: 24px 0 0; border: 1px solid var(--border);">
+                <h2 style="margin: 0 0 16px 0; font-size: 1.3rem;">📚 เนื้อหาทั้งหมด</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; font-size: 0.9rem;">
+                    <div>
+                        <h3 style="margin: 0 0 8px; font-size: 1rem;">🎧 Listening (บทที่ 1-15, 21-25)</h3>
+                        <ul style="margin: 0; padding-left: 20px; color: var(--text-light); line-height: 1.8;">
+                            <li>Short Dialogues & สำนวน</li>
+                            <li>Long Dialogues & การตีความ</li>
+                            <li>Short Talks & ประกาศ</li>
+                            <li>Pronunciation Traps</li>
+                            <li>Master Simulation</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 style="margin: 0 0 8px; font-size: 1rem;">📖 Reading (บทที่ 16-20, 34-36, 38)</h3>
+                        <ul style="margin: 0; padding-left: 20px; color: var(--text-light); line-height: 1.8;">
+                            <li>Cloze Test & Vocabulary</li>
+                            <li>Skimming, Scanning, Main Idea</li>
+                            <li>Long Passage (Science, History, Environment)</li>
+                            <li>Vocabulary in Context</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 style="margin: 0 0 8px; font-size: 1rem;">✏️ Grammar (บทที่ 26-33, 37, 39)</h3>
+                        <ul style="margin: 0; padding-left: 20px; color: var(--text-light); line-height: 1.8;">
+                            <li>Error Identification (S-V Agreement, Tense, Voice)</li>
+                            <li>Parts of Speech, Connectors, Participles</li>
+                            <li>Subjunctive, Inversion, Relative Clauses</li>
+                            <li>Sentence Completion & Mixed Review</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 style="margin: 0 0 8px; font-size: 1rem;">🎯 เก็งข้อสอบ & Mock Test (บทที่ 40-45)</h3>
+                        <ul style="margin: 0; padding-left: 20px; color: var(--text-light); line-height: 1.8;">
+                            <li>Mock Test เต็มรูปแบบ 4 พาร์ท</li>
+                            <li>เก็งข้อสอบ Listening 5 ชุด (75 ข้อ)</li>
+                            <li>ทุกข้อมีฟังเสียง + คำแปลไทย</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
